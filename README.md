@@ -5,26 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YouTube Shorts AI – Lifetime Access</title>
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .fade-in { animation: fadeIn 0.8s ease-in forwards; opacity: 0; }
-    @keyframes fadeIn { to { opacity: 1; } }
+    .fade-in {
+      animation: fadeIn 0.8s ease-in forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
   </style>
 </head>
 
-<body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen flex items-center justify-center">
+<body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen flex items-center justify-center px-4">
 
   <div class="bg-white shadow-2xl rounded-3xl p-8 sm:p-12 w-full max-w-lg fade-in">
 
-    <!-- Header -->
+    <!-- HEADER -->
     <h1 class="text-4xl font-extrabold mb-4 text-red-600 text-center">
       YouTube Shorts AI
     </h1>
 
-    <div class="flex justify-center gap-2 mb-6">
+    <div class="flex justify-center gap-2 mb-6 flex-wrap">
       <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold">
         🔓 Lifetime Access
       </span>
@@ -34,11 +39,11 @@
     </div>
 
     <p class="text-gray-700 text-center mb-8">
-      Pay once and get <strong>lifetime access</strong>.  
+      Pay once and get <strong>lifetime access</strong>.<br>
       No monthly fees. No renewals.
     </p>
 
-    <!-- STEP 1 -->
+    <!-- STEP 1 : EMAIL -->
     <div id="emailStep">
       <input
         id="userEmail"
@@ -58,7 +63,7 @@
       </p>
     </div>
 
-    <!-- STEP 2 -->
+    <!-- STEP 2 : PAYMENT -->
     <div id="paymentStep" class="hidden fade-in">
 
       <p class="text-center mb-4 text-gray-700">
@@ -85,7 +90,7 @@
 
       <p class="mt-4 text-center text-sm text-gray-600">
         After payment, send screenshot to  
-        <a href="https://wa.me/94XXXXXXXXX" class="text-green-600 font-semibold">
+        <a href="https://wa.me/94XXXXXXXXX" target="_blank" class="text-green-600 font-semibold">
           WhatsApp Support
         </a>
       </p>
@@ -117,14 +122,14 @@
       paymentStep.classList.remove("hidden");
     });
 
-    window.onload = () => {
+    window.addEventListener("load", () => {
       const savedEmail = localStorage.getItem("yt_email");
       if (savedEmail) {
         emailText.innerText = savedEmail;
         emailStep.classList.add("hidden");
         paymentStep.classList.remove("hidden");
       }
-    };
+    });
   </script>
 
 </body>
